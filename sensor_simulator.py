@@ -22,10 +22,10 @@ def generate_sensor_data(location):
   return {
     "location": location,
     "timestamp": datetime.now().isoformat(),
-    "iceThickness": round(random.uniform(20, 40), 2),
-    "surfaceTemp": round(random.uniform(-10, 0), 2),
+    "iceThickness": round(random.uniform(20, 35), 2),
+    "surfaceTemp": round(random.uniform(-10, 5), 2),
     "snowAccumulation": round(random.uniform(0, 15), 2),
-    "externalTemp": round(random.uniform(-25, -5), 2)
+    "externalTemp": round(random.uniform(-25, 0), 2)
   }
 
 
