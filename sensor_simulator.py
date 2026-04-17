@@ -33,15 +33,16 @@ def run_sensor(sensor):
   client = IoTHubDeviceClient.create_from_connection_string(sensor["conn_str"])
   print(f"{sensor["location"]} started...")
 
-  count = 0 # just 5 sets of data for dev
+  # count = 0 # just 5 sets of data for dev
 
   try:
-    while count < 5:
+    # while count < 5:
+    while True:
       data = generate_sensor_data(sensor["location"])
       message = Message(json.dumps(data))
       client.send_message(message)
       print(f"[{sensor["location"]}] Sent: {data}")
-      count+=1 # just 5 sets of data for dev
+      # count+=1 # just 5 sets of data for dev
       time.sleep(10)
   except KeyboardInterrupt:
     print(f"{sensor["location"]} stopped...")
